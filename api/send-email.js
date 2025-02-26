@@ -22,7 +22,7 @@ router.post("/send-email", async (req, res) => {
 
         const mailOptions = {
             from: process.env.EMAIL_USER,
-            to: process.env.RECEIVER_EMAIL, // Aquí va el correo donde recibirás los mensajes
+            to: process.env.EMAIL_TO,
             subject: "Nueva solicitud de membresía - Barbas Team",
             html: `
                 <h2>Solicitud de Membresía</h2>
@@ -35,7 +35,6 @@ router.post("/send-email", async (req, res) => {
 
         await transporter.sendMail(mailOptions);
         res.status(200).json({ success: true, message: "Correo enviado correctamente." });
-
     } catch (error) {
         console.error("Error enviando correo:", error);
         res.status(500).json({ success: false, message: "Error al enviar el correo." });

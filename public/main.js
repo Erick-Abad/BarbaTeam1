@@ -1,22 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector(".membership-form");
+    if (!form) return;
 
     form.addEventListener("submit", async function (event) {
-        event.preventDefault(); // Evita el envío predeterminado del formulario
+        event.preventDefault();
 
         const formData = {
-            name: form["cf-name"].value,
-            email: form["cf-email"].value,
-            phone: form["cf-phone"].value,
-            message: form["cf-message"].value,
+            name: form["cf-name"].value.trim(),
+            email: form["cf-email"].value.trim(),
+            phone: form["cf-phone"].value.trim(),
+            message: form["cf-message"].value.trim(),
         };
+
+        if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+            alert("Todos los campos son obligatorios.");
+            return;
+        }
 
         try {
             const response = await fetch("/api/send-email", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
             });
 

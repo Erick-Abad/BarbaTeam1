@@ -14,5 +14,4 @@
       { "src": "/fonts/(.*)", "dest": "/public/fonts/$1" },
       { "src": "/(.*)", "dest": "/public/$1" }
     ]
-  }
-  
+}
