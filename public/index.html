@@ -356,15 +356,14 @@ https://www.tooplate.com/view/2119-gymso-fitness
                     <div class="ml-auto col-lg-5 col-md-6 col-12">
                         <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200">No dudes en preguntar cualquier cosa</h2>
 
-                        <form action="#" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
-                            <input type="text" class="form-control" name="cf-name" placeholder="Name">
+                       <!-- FORMULARIO DE CONTACTO -->
+<form class="contact-form webform" id="contactForm" role="form">
+    <input type="text" class="form-control" name="cf-name" placeholder="Nombre" required>
+    <input type="email" class="form-control" name="cf-email" placeholder="Correo" required>
+    <textarea class="form-control" rows="5" name="cf-message" placeholder="Mensaje" required></textarea>
+    <button type="submit" class="form-control" id="contact-submit-button">Enviar</button>
+</form>
 
-                            <input type="email" class="form-control" name="cf-email" placeholder="Email">
-
-                            <textarea class="form-control" rows="5" name="cf-message" placeholder="Message"></textarea>
-
-                            <button type="submit" class="form-control" id="submit-button" name="submit">Send Message</button>
-                        </form>
                     </div>
 
                     <div class="mx-auto mt-4 mt-lg-0 mt-md-0 col-lg-5 col-md-6 col-12">
@@ -434,24 +433,15 @@ https://www.tooplate.com/view/2119-gymso-fitness
           </div>
 
           <div class="modal-body">
-            <form class="membership-form webform" role="form">
-                <input type="text" class="form-control" name="cf-name" placeholder="Nombre">
+            <!-- FORMULARIO DE MEMBRESÍA (Modal) -->
+<form class="membership-form webform" id="membershipForm" role="form">
+    <input type="text" class="form-control" name="cf-name" placeholder="Nombre" required>
+    <input type="email" class="form-control" name="cf-email" placeholder="Correo" required>
+    <input type="tel" class="form-control" name="cf-phone" placeholder="Celular" pattern="[0-9]{10}" required>
+    <textarea class="form-control" rows="3" name="cf-message" placeholder="Adiciona un mensaje" required></textarea>
+    <button type="submit" class="form-control" id="submit-button">Enviar</button>
+</form>
 
-                <input type="email" class="form-control" name="cf-email" placeholder="Correo">
-
-                <input type="tel" class="form-control" name="cf-phone" placeholder="Celular" pattern="[0-9]{10}" required>
-
-
-                <textarea class="form-control" rows="3" name="cf-message" placeholder="Adiciona un mensaje"></textarea>
-
-                <button type="submit" class="form-control" id="submit-button" name="submit">Enviar</button>
-
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="signup-agree">
-                    <label class="custom-control-label text-small text-muted" for="signup-agree">I agree to the <a href="#">Terms &amp;Conditions</a>
-                    </label>
-                </div>
-            </form>
           </div>
 
           <div class="modal-footer"></div>
